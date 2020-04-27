@@ -13,10 +13,15 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String name, String address) {
-        this.id = id;
+    public Student(String name, String address) {
+        this();
         this.name = name;
         this.address = address;
+    }
+
+    public Student(Long id, String name, String address) {
+        this(name, address);
+        this.id = id;
     }
 
     public Long getId() {

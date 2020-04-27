@@ -13,10 +13,15 @@ public class College {
     public College() {
     }
 
-    public College(Long id, String name, String nameOfCity) {
-        this.id = id;
+    public College(String name, String nameOfCity) {
+        this();
         this.name = name;
         this.nameOfCity = nameOfCity;
+    }
+
+    public College(Long id, String name, String nameOfCity) {
+        this(name, nameOfCity);
+        this.id = id;
     }
 
     public Long getId() {
