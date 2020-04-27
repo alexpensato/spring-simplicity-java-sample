@@ -55,6 +55,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+    testImplementation("org.mockito:mockito-core:3.3.3")
+
 }
 
 tasks.withType<Test> {
