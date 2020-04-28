@@ -56,7 +56,8 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
     testImplementation("org.mockito:mockito-core:3.3.3")
-
+    testImplementation("org.dbunit:dbunit:2.7.0")
+    testImplementation("com.h2database:h2:1.4.200")
 }
 
 tasks.withType<Test> {

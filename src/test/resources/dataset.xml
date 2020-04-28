@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <college id='1' name='University of California' name_of_city='Berkeley'/>
+    <college id='2' name='Harvard University' name_of_city='Cambridge'/>
+    <student id='1' name='Mark' address='Telegraph Ave' college_id='1'/>
+    <student id='2' name='Susie' address='Shattuck Ave' college_id='1'/>
+    <student id='3' name='Valerie' address='Euclid Ave' college_id='1'/>
+    <student id='4' name='John' address='Oxford St' college_id='2'/>
+    <student id='5' name='Mary' address='Washington St' college_id='2'/>
+    <student id='6' name='Joseph' address='Everett St' college_id='2'/>
+    <student id='7' name='Alexander' address='Main Rd' college_id='1'/>
+</dataset>
