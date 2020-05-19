@@ -2,7 +2,7 @@ package org.pensatocode.simplicity.sample.repository.impl;
 
 import org.pensatocode.simplicity.jdbc.AbstractJdbcRepository;
 import org.pensatocode.simplicity.sample.domain.Student;
-import org.pensatocode.simplicity.sample.mapper.StudentMapper;
+import org.pensatocode.simplicity.sample.repository.mapper.StudentMapper;
 import org.pensatocode.simplicity.sample.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

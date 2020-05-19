@@ -1,7 +1,7 @@
-package org.pensatocode.simplicity.sample.mapper;
+package org.pensatocode.simplicity.sample.repository.mapper;
 
 import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
-import org.pensatocode.simplicity.sample.domain.College;
+import org.pensatocode.simplicity.sample.domain.Student;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,15 +9,15 @@ import java.sql.Types;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class CollegeMapper extends TransactionalRowMapper<College> {
+public class StudentMapper extends TransactionalRowMapper<Student> {
 
     @Override
-    public College mapRow(ResultSet rs, int rowNum) {
+    public Student mapRow(ResultSet rs, int rowNum) {
         try {
-            return new College(
+            return new Student(
                     rs.getLong("id"),
                     rs.getString("name"),
-                    rs.getString("name_of_city")
+                    rs.getString("address")
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -26,11 +26,11 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
     }
 
     @Override
-    public Map<String, Object> mapColumns(College entity) {
+    public Map<String, Object> mapColumns(Student entity) {
         Map<String, Object> mapping = new LinkedHashMap<>();
         mapping.put("id", entity.getId());
         mapping.put("name", entity.getName());
-        mapping.put("name_of_city", entity.getNameOfCity());
+        mapping.put("address", entity.getAddress());
         return mapping;
     }
 
@@ -39,8 +39,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
         mapping.put("id", Types.INTEGER);
         mapping.put("name", Types.VARCHAR);
-        mapping.put("name_of_city", Types.VARCHAR);
+        mapping.put("address", Types.VARCHAR);
         return mapping;
     }
-
 }

@@ -2,7 +2,7 @@ package org.pensatocode.simplicity.sample.repository.impl;
 
 import org.pensatocode.simplicity.jdbc.AbstractJdbcRepository;
 import org.pensatocode.simplicity.sample.domain.College;
-import org.pensatocode.simplicity.sample.mapper.CollegeMapper;
+import org.pensatocode.simplicity.sample.repository.mapper.CollegeMapper;
 import org.pensatocode.simplicity.sample.repository.CollegeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
