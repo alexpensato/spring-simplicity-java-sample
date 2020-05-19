@@ -7,7 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.pensatocode.simplicity.sample.domain.Student;
-import org.pensatocode.simplicity.sample.mapper.StudentMapper;
+import org.pensatocode.simplicity.sample.repository.mapper.StudentMapper;
 import org.pensatocode.simplicity.sample.repository.impl.StudentRepositoryImpl;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
