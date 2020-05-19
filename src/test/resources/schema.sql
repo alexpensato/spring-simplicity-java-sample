@@ -12,3 +12,11 @@ CREATE TABLE IF NOT EXISTS student (
   address varchar(100),
   PRIMARY KEY (`id`)
 );
+
+CREATE TABLE IF NOT EXISTS book (
+  id integer AUTO_INCREMENT NOT NULL,
+  title varchar(50) NOT NULL,
+  author varchar(50) NOT NULL,
+  isbn varchar(14) NULL,
+  PRIMARY KEY (`id`)
+);

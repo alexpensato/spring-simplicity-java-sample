@@ -9,4 +9,8 @@
     <student id='5' name='Mary' address='Washington St' college_id='2'/>
     <student id='6' name='Joseph' address='Everett St' college_id='2'/>
     <student id='7' name='Alexander' address='Main Rd' college_id='1'/>
+    <book id='1' title='Computer Science: A Concise Introduction' author='Ian Sinclair' isbn='978-0750602525'/>
+    <book id='2' title='Computer Science Handbook 2nd Edition' author='Allen B. Tucker' isbn='978-1584883609'/>
+    <book id='3' title='The Code Book: The Secret History of Code-Breaking' author='Simon Singh' isbn='978-1857028898'/>
+    <book id='4' title='Chaos: Making A New Science' author='James Gleick' isbn='978-0749386061'/>
 </dataset>

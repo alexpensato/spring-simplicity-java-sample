@@ -15,3 +15,20 @@ CREATE TABLE IF NOT EXISTS student (
   address varchar(100)
 );
 
+CREATE SEQUENCE IF NOT EXISTS book_id_seq START 5;
+
+CREATE TABLE IF NOT EXISTS book (
+  id integer DEFAULT nextval('book_id_seq') PRIMARY KEY,
+  title varchar(50) NOT NULL,
+  discipline varchar(100)
+);
+
+CREATE SEQUENCE IF NOT EXISTS book_id_seq START 5;
+
+CREATE TABLE IF NOT EXISTS book (
+  id integer DEFAULT nextval('book_id_seq') PRIMARY KEY,
+  title varchar(50) NOT NULL,
+  author varchar(50) NOT NULL,
+  isbn varchar(14) NULL
+);
+
