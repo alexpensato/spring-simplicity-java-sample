@@ -32,3 +32,10 @@ CREATE TABLE IF NOT EXISTS book (
   isbn varchar(14) NULL
 );
 
+CREATE SEQUENCE IF NOT EXISTS professor_id_seq START 1;
+
+CREATE TABLE IF NOT EXISTS professor (
+  id integer DEFAULT nextval('professor_id_seq') PRIMARY KEY,
+  name varchar NOT NULL,
+  beginDate date NOT NULL,
+);
