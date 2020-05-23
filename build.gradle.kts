@@ -4,6 +4,7 @@ val h2Version = "1.4.200"
 val postgresVersion = "9.4.1208-atlassian-hosted"
 val hikariVersion = "3.4.2"
 val validationApiVersion = "2.0.1.Final"
+val persistenceApiVersion = "2.2"
 
 plugins {
     id("org.springframework.boot") version "2.2.6.RELEASE"
@@ -47,6 +48,7 @@ dependencies {
     implementation(":spring-simplicity-java")
     implementation("org.springframework:spring-jdbc:${springVersion}")
     implementation("org.springframework.data:spring-data-commons:${springBootVersion}")
+    implementation("javax.persistence:javax.persistence-api:${persistenceApiVersion}")
 
     // Database
     runtimeOnly("postgresql:postgresql:${postgresVersion}")
@@ -63,4 +65,3 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-
