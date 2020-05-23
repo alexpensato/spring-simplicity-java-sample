@@ -2,8 +2,10 @@ package org.pensatocode.simplicity.sample.domain;
 
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Book {
     @Id
     Long id = 0L;

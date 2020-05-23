@@ -1,7 +1,8 @@
 package org.pensatocode.simplicity.sample.repository.mapper;
 
-import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
 import org.pensatocode.simplicity.sample.domain.Book;
+
+import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,8 +41,9 @@ public class BookMapper extends TransactionalRowMapper<Book> {
     public Map<String, Integer> mapTypes() {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
         mapping.put("id", Types.INTEGER);
-        mapping.put("name", Types.VARCHAR);
-        mapping.put("address", Types.VARCHAR);
+        mapping.put("title", Types.VARCHAR);
+        mapping.put("author", Types.VARCHAR);
+        mapping.put("isbn", Types.VARCHAR);
         return mapping;
     }
 }
