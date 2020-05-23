@@ -1,7 +1,8 @@
 package org.pensatocode.simplicity.sample.repository.mapper;
 
-import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
 import org.pensatocode.simplicity.sample.domain.Student;
+
+import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,7 +1,8 @@
 package org.pensatocode.simplicity.sample.repository.mapper;
 
-import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
 import org.pensatocode.simplicity.sample.domain.College;
+
+import org.pensatocode.simplicity.jdbc.mapper.TransactionalRowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +18,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
             return new College(
                     rs.getLong("id"),
                     rs.getString("name"),
-                    rs.getString("name_of_city")
+                    rs.getString("nameOfCity")
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -30,7 +31,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
         Map<String, Object> mapping = new LinkedHashMap<>();
         mapping.put("id", entity.getId());
         mapping.put("name", entity.getName());
-        mapping.put("name_of_city", entity.getNameOfCity());
+        mapping.put("nameOfCity", entity.getNameOfCity());
         return mapping;
     }
 
@@ -39,8 +40,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
         mapping.put("id", Types.INTEGER);
         mapping.put("name", Types.VARCHAR);
-        mapping.put("name_of_city", Types.VARCHAR);
+        mapping.put("nameOfCity", Types.VARCHAR);
         return mapping;
     }
-
 }
