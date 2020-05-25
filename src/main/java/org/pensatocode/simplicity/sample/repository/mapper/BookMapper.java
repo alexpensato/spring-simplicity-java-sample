@@ -40,7 +40,7 @@ public class BookMapper extends TransactionalRowMapper<Book> {
     @Override
     public Map<String, Integer> mapTypes() {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
-        mapping.put("id", Types.INTEGER);
+        mapping.put("id", Types.BIGINT);
         mapping.put("title", Types.VARCHAR);
         mapping.put("author", Types.VARCHAR);
         mapping.put("isbn", Types.VARCHAR);

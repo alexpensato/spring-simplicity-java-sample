@@ -38,7 +38,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
     @Override
     public Map<String, Integer> mapTypes() {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
-        mapping.put("id", Types.INTEGER);
+        mapping.put("id", Types.BIGINT);
         mapping.put("name", Types.VARCHAR);
         mapping.put("nameOfCity", Types.VARCHAR);
         return mapping;

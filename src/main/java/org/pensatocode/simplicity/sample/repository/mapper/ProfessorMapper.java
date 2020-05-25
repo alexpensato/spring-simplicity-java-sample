@@ -18,7 +18,7 @@ public class ProfessorMapper extends TransactionalRowMapper<Professor> {
             return new Professor(
                     rs.getLong("id"),
                     rs.getString("name"),
-                    rs.getDate("beginDate").toLocalDate()
+                    convertToLocalDate(rs.getDate("beginDate"))
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,7 +38,7 @@ public class ProfessorMapper extends TransactionalRowMapper<Professor> {
     @Override
     public Map<String, Integer> mapTypes() {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
-        mapping.put("id", Types.INTEGER);
+        mapping.put("id", Types.BIGINT);
         mapping.put("name", Types.VARCHAR);
         mapping.put("beginDate", Types.DATE);
         return mapping;
