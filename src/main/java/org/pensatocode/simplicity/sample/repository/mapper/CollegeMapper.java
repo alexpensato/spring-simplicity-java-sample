@@ -18,7 +18,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
             return new College(
                     rs.getLong("id"),
                     rs.getString("name"),
-                    rs.getString("nameOfCity")
+                    rs.getString("name_of_city")
             );
         } catch (SQLException e) {
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
         Map<String, Object> mapping = new LinkedHashMap<>();
         mapping.put("id", entity.getId());
         mapping.put("name", entity.getName());
-        mapping.put("nameOfCity", entity.getNameOfCity());
+        mapping.put("name_of_city", entity.getNameOfCity());
         return mapping;
     }
 
@@ -40,7 +40,7 @@ public class CollegeMapper extends TransactionalRowMapper<College> {
         final Map<String, Integer> mapping = new LinkedHashMap<>();
         mapping.put("id", Types.BIGINT);
         mapping.put("name", Types.VARCHAR);
-        mapping.put("nameOfCity", Types.VARCHAR);
+        mapping.put("name_of_city", Types.VARCHAR);
         return mapping;
     }
 }

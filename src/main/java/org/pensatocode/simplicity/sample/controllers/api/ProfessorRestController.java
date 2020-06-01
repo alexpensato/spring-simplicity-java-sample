@@ -1,4 +1,4 @@
-package org.pensatocode.simplicity.sample.controller;
+package org.pensatocode.simplicity.sample.controllers.api;
 
 import org.pensatocode.simplicity.sample.domain.Professor;
 import org.pensatocode.simplicity.sample.repository.ProfessorRepository;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/professor")
-public class ProfessorController extends AbstractController<Professor, Long> {
-    public ProfessorController(@Autowired ProfessorRepository professorRepository) {
+@RequestMapping("/api/professors")
+public class ProfessorRestController extends AbstractController<Professor, Long> {
+    public ProfessorRestController(@Autowired ProfessorRepository professorRepository) {
         super(professorRepository);
     }
 }
