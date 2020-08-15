@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Spring Boot Admin</title>
+</head>
+<body>
+<div class="content" th:fragment="update-college">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card card-user">
+                <div class="card-header">
+                    <h5 class="card-title">Edit College</h5>
+                </div>
+                <div class="card-body">
+                    <form action="#" th:action="@{/colleges/update/{id}(id=${college.id})}" th:object="${college}" method="post">
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label for="name" class="col-form-label">Name</label>
+                                    <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Name">
+                                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                                <div class="form-group">
+                                    <label for="nameOfCity" class="col-form-label">City</label>
+                                    <input type="text" th:field="*{nameOfCity}" class="form-control" id="nameOfCity" placeholder="City">
+                                    <span th:if="${#fields.hasErrors('nameOfCity')}" th:errors="*{nameOfCity}" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="update ml-auto mr-auto">
+                                <button type="submit" class="btn btn-primary btn-round">Update College</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

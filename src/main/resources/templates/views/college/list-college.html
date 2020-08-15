@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Spring Boot Admin</title>
+</head>
+<body>
+<div class="content" th:fragment="list-college">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Colleges</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            </thead>
+                            <tbody>
+                            <tr th:each="college : ${colleges}">
+                                <td th:text="${college.name}"></td>
+                                <td th:text="${college.nameOfCity}"></td>
+                                <td><a th:href="@{/colleges/edit/{id}(id=${college.id})}">
+                                    <btn class="btn btn-sm btn-outline-success btn-round btn-icon"><i class="fa fa-pencil"></i></btn>
+                                </a></td>
+                                <td><a th:href="@{/colleges/delete/{id}(id=${college.id})}">
+                                    <btn class="btn btn-sm btn-outline-danger btn-round btn-icon"><i class="fa fa-remove"></i></btn>
+                                </a></td>
+                                <div class="col-md-3 col-3 text-right">
+
+                                </div>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-1"></div>
+                    <div class="col-sm-12 col-md-3">
+                        <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing 31 to 40 of 42 entries
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dataTables_paginate paging_full_numbers" id="datatable_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item first" id="datatable_first"><a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0" class="page-link">First</a></li>
+                                <li class="paginate_button page-item previous" id="datatable_previous"><a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0" class="page-link">Previous</a></li>
+                                <li class="paginate_button page-item active"><a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0" class="page-link">1</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="3" tabindex="0" class="page-link">2</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="4" tabindex="0" class="page-link">3</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="5" tabindex="0" class="page-link">4</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="6" tabindex="0" class="page-link">5</a></li>
+                                <li class="paginate_button page-item next" id="datatable_next"><a href="#" aria-controls="datatable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
+                                <li class="paginate_button page-item last" id="datatable_last"><a href="#" aria-controls="datatable" data-dt-idx="8" tabindex="0" class="page-link">Last</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <a href="/colleges/create"><button type="button" rel="tooltip" class="btn btn-outline-default btn-round " data-original-title="" title="">
+                                Add College</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

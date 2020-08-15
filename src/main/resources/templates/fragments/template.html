@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Spring Boot Admin</title>
+</head>
+<body>
+    <div th:fragment="template"></div>
+    <div th:replace="@{'views/' + ${content}} :: ${content}"></div>
+</body>
+</html>

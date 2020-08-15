@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" class="perfect-scrollbar-on">
+<head lang="en" th:replace="fragments/header :: header">
+    <title>Spring Boot Admin</title>
+</head>
+<body class="">
+<div class="wrapper ">
+    <!-- Sidebar -->
+    <div th:replace="fragments/sidebar :: sidebar">
+    </div>
+    <!-- End Sidebar -->
+    <div class="main-panel" style="height: 100vh;">
+        <!-- Navbar -->
+        <nav th:replace="fragments/navbar :: navbar">
+        </nav>
+        <!-- End Navbar -->
+        <!-- Content -->
+        <div th:replace="@{'views/' + ${path} + '/' + ${content}} :: ${content}"></div>
+        <!-- End Content -->
+        <!-- Footer -->
+        <footer th:replace="fragments/footer :: footer">
+        </footer>
+        <!-- End Footer -->
+    </div>
+</div>
+<!--   Core JS Files   -->
+<script type="text/javascript" th:src="@{/assets/js/core/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/core/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/core/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/assets/js/plugins/perfect-scrollbar.jquery.min.js}"></script>
+<!--  Notifications Plugin    -->
+<script type="text/javascript" th:src="@{/assets/js/plugins/bootstrap-notify.js}"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script type="text/javascript" th:src="@{/assets/js/paper-dashboard.min.js?v=2.0.1}"></script>
+</body>
+
+</html>
