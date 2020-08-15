@@ -17,7 +17,11 @@ group = "org.pensatocode.simplicity.sample"
 version = "2.0.0"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
+val developmentOnly by configurations.creating
 configurations {
+    runtimeClasspath {
+        extendsFrom(developmentOnly)
+    }
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
     }
@@ -37,6 +41,7 @@ repositories {
 dependencies {
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}")
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
 
     // Java extras
@@ -54,6 +59,10 @@ dependencies {
     runtimeOnly("postgresql:postgresql:${postgresVersion}")
     implementation("com.zaxxer:HikariCP:${hikariVersion}")
 
+    // Dev Tools
+    developmentOnly("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
+
+    // Test
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
