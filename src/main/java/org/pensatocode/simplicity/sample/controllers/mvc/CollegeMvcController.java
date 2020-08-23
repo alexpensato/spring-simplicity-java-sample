@@ -26,15 +26,15 @@ public class CollegeMvcController {
 
     @GetMapping("list")
     public String loadColleges(Locale locale, Model model) {
+        addRequiredModelAttributes(model);
         model.addAttribute("colleges", collegeRepository.findAll());
-        model.addAttribute("path", "college");
         model.addAttribute("content", "list-college");
         return "index";
     }
 
     @GetMapping("create")
     public String showCreateForm(Locale locale, Model model, College college) {
-        model.addAttribute("path", "college");
+        addRequiredModelAttributes(model);
         model.addAttribute("content", "add-college");
         return "index";
     }
@@ -54,8 +54,8 @@ public class CollegeMvcController {
         if (college == null) {
             throw new IllegalArgumentException("Invalid college Id:" + id);
         }
+        addRequiredModelAttributes(model);
         model.addAttribute("college", college);
-        model.addAttribute("path", "college");
         model.addAttribute("content", "update-college");
         return "index";
     }
@@ -79,6 +79,11 @@ public class CollegeMvcController {
         }
         collegeRepository.delete(college.getId());
         return "redirect:/colleges/list";
+    }
+
+    private void addRequiredModelAttributes(Model model) {
+        model.addAttribute("path", "college");
+        model.addAttribute("title", "Colleges");
     }
 
 }

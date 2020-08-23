@@ -14,6 +14,7 @@ public class HomeController {
     @GetMapping
     public String loadHome(Locale locale, Model model) {
         model.addAttribute("path", "home");
+        model.addAttribute("title", "Home");
         model.addAttribute("content", "home");
         return "index";
     }
